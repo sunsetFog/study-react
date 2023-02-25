@@ -3,10 +3,11 @@
 ![Demonstration](https://github.com/Hzy0913/hanlibrary/blob/master/Demonstration.gif "Demonstration")
 ### Installation
 
+# 安装react-cli脚手架
 ```
 npm install -g build-react
 ```
-### Usage
+### Usage   使用脚手架搭建项目
 ```
 build-react init my-react
 ```

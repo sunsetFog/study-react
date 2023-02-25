@@ -6,7 +6,7 @@ const initialState = {
   water: '水'
 };
 
-// 默认导出   action传参 = { type: 'set_userinfo' }
+// 默认导出   action入参   { type: 'set_userinfo' }
 export default function reducer(state = initialState, action = {}) {
   console.log("顺序2=入参", action);
   // 深拷贝state

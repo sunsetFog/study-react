@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// 状态管理
+// 状态管理  bindActionCreators在API文档
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as niceActions from '~/redux/reduces/nice.js';
@@ -7,6 +7,9 @@ import * as niceActions from '~/redux/reduces/nice.js';
 import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
 
 import { Button } from 'antd';
+
+// 引入vuex   Store在API文档
+import Store from '~/redux';
 
 // 这步能在this.props里使用state，action方法
 @connect(
@@ -27,6 +30,7 @@ class ExVuex extends Component {
     constructor(props) {
         super(props);
         console.log("--constructor--数据的初始化", this);
+        console.log("vuex-state=", Store.getState());
     }
     /*
         组件第一次渲染完成，此时dom节点已经生成，可以在这里调用ajax请求，返回数据setState后组件会重新渲染
@@ -43,7 +47,12 @@ class ExVuex extends Component {
 
     changeApple() {
         // 调用action方法
-        this.props.changeApple({ water: '冰' });
+        // 方法一：用this.props
+        // this.props.changeApple({ water: '冰' });
+
+        // 方法二：直接到顺序2
+        Store.dispatch({type: 'set_userinfo', water: '冰' });
+
         console.log("--changeApple--", this);
     }
 
