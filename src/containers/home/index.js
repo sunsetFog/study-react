@@ -62,8 +62,8 @@ class Nice extends Component {
                 {/* <Router> */}
                   <Switch>
                     {routes.map(item => true && <Route render={() => <item.component />} key={item.path} path={item.path} />)}
-                    <Redirect from="/" exact to="/lifeCycle" />
-                    <Redirect to="/lifeCycle" />
+                    
+                    <Redirect to="/home/lifeCycle" />
                   </Switch>
                 {/* </Router> */}
               </main>

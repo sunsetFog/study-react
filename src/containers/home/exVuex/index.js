@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 // 状态管理
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import * as niceActions from '../../redux/reduces/nice.js';
+import * as niceActions from '~/redux/reduces/nice.js';
 
-import { HashRouter as Router, Route, Switch, Redirect, Link, NavLink, withRouter } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
 
 
 @connect(
@@ -12,7 +12,7 @@ import { HashRouter as Router, Route, Switch, Redirect, Link, NavLink, withRoute
     dispatch => bindActionCreators(niceActions, dispatch)
 )
 
-class Jump extends Component {
+class ExVuex extends Component {
     /*
         数据
      */
@@ -25,7 +25,6 @@ class Jump extends Component {
     constructor(props) {
         super(props);
         console.log("--constructor--数据的初始化");
-        console.log("父组件传的参数=", this.props);
     }
     /*
         组件第一次渲染完成，此时dom节点已经生成，可以在这里调用ajax请求，返回数据setState后组件会重新渲染
@@ -42,19 +41,9 @@ class Jump extends Component {
     render() {
 
       return (
-        <section>
-            {/* 
-                编译：<a href='/'>Home</a>
-             */}
-            <Link to='/home'>Home</Link>
-            <br/>
-            {/* 
-                编译：<a href='/react' className='hurray'>React</a>
-             */}
-            <NavLink to='/react' activeClassName='hurray'>React</NavLink>
-        </section>
+        <div>++++状态管理++++</div>
       );
     }
 }
 
-export default withRouter(Jump);
+export default withRouter(ExVuex);

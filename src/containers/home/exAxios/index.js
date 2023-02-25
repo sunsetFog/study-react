@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 // 状态管理
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import * as niceActions from '../../redux/reduces/nice.js';
+import * as niceActions from '~/redux/reduces/nice.js';
 
 import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 
     dispatch => bindActionCreators(niceActions, dispatch)
 )
 
-class ExCache extends Component {
+class ExAxios extends Component {
     /*
         数据
      */
@@ -25,12 +25,15 @@ class ExCache extends Component {
     constructor(props) {
         super(props);
         console.log("--constructor--数据的初始化");
-        window.sessionStorage.setItem("road", "道路");
-        let road = window.sessionStorage.getItem("road");
-        console.log("session缓存=", road);
-        window.localStorage.setItem("flower", "花");
-        let flower = window.localStorage.getItem("flower");
-        console.log("localStorage缓存=", flower);
+        console.log("父组件传的参数=", this.props);
+        // study: http请求
+        customAxios.get('http://localhost:8062/sky/menu/btnList')
+        .then((response) => {
+            console.log("then=", response);
+        })
+        .catch(error => {
+            console.log("catch=", error);
+        });
     }
     /*
         组件第一次渲染完成，此时dom节点已经生成，可以在这里调用ajax请求，返回数据setState后组件会重新渲染
@@ -47,9 +50,9 @@ class ExCache extends Component {
     render() {
 
       return (
-        <div>++++缓存++++</div>
+        <div>++++自定义Axios++++</div>
       );
     }
 }
 
-export default withRouter(ExCache);
+export default withRouter(ExAxios);

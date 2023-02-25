@@ -2,17 +2,9 @@ import React, {Component} from 'react';
 // 状态管理
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import * as niceActions from '../../redux/reduces/nice.js';
+import * as niceActions from '~/redux/reduces/nice.js';
 
-import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
-
-/*
-类型检测prop-types的基本使用
-https://www.cnblogs.com/xuwennn/p/prop-types.html
-在子组件中导入
-当父子组件间通过props传递数据时，通过对组件数据进行类型检测，有效监控数据 —— 当数据传递类型出错或者传递空数据可以迅速找到出错的准确位置，更省时方便
- */
-import  PropTypes  from  'prop-types'  
+import { HashRouter as Router, Route, Switch, Redirect, Link, NavLink, withRouter } from 'react-router-dom';
 
 
 @connect(
@@ -20,10 +12,7 @@ import  PropTypes  from  'prop-types'
     dispatch => bindActionCreators(niceActions, dispatch)
 )
 
-class Son extends Component {
-    static propTypes = {
-        param1: PropTypes.string
-    }
+class Jump extends Component {
     /*
         数据
      */
@@ -35,27 +24,37 @@ class Son extends Component {
      */
     constructor(props) {
         super(props);
-        console.log("--constructor--Son数据的初始化");
+        console.log("--constructor--数据的初始化");
         console.log("父组件传的参数=", this.props);
     }
     /*
         组件第一次渲染完成，此时dom节点已经生成，可以在这里调用ajax请求，返回数据setState后组件会重新渲染
      */
     componentDidMount() {
-        console.log("--componentDidMount--Son渲染完成");
+        console.log("--componentDidMount--渲染完成");
     }
     /*
         完成组件的卸载和数据的销毁
      */
     componentWillUnmount () {
-        console.log("--componentWillUnmount--Son卸载");
+        console.log("--componentWillUnmount--卸载");
     }
     render() {
 
       return (
-        <div>++++子组件++++</div>
+        <section>
+            {/* 
+                编译：<a href='/'>Home</a>
+             */}
+            <Link to='/home'>Home</Link>
+            <br/>
+            {/* 
+                编译：<a href='/react' className='hurray'>React</a>
+             */}
+            <NavLink to='/react' activeClassName='hurray'>React</NavLink>
+        </section>
       );
     }
 }
 
-export default withRouter(Son);
+export default withRouter(Jump);

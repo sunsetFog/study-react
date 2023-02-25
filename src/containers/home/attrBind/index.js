@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 // 状态管理
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import * as niceActions from '../../redux/reduces/nice.js';
+import * as niceActions from '~/redux/reduces/nice.js';
 
 import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
 
 // 引入图片
-import logoimg from '../../assets/nice/logo.png';
+import logoimg from '~/assets/nice/logo.png';
 
 import { Button, theme, Modal } from 'antd'
 

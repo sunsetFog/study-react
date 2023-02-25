@@ -2,9 +2,12 @@ import React, {Component} from 'react';
 // 状态管理
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import * as niceActions from '../../redux/reduces/nice.js';
+import * as niceActions from '~/redux/reduces/nice.js';
 
 import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
+
+// 引入子组件  名字要大写
+import Son from './son';
 
 
 @connect(
@@ -12,7 +15,7 @@ import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 
     dispatch => bindActionCreators(niceActions, dispatch)
 )
 
-class ExVuex extends Component {
+class Father extends Component {
     /*
         数据
      */
@@ -41,9 +44,13 @@ class ExVuex extends Component {
     render() {
 
       return (
-        <div>++++状态管理++++</div>
+        <section>
+            ++++父组件++++
+            <br/>
+            <Son param1={123} param2="c" func1={()=>{console.log('func1')}} ></Son>
+        </section>
       );
     }
 }
 
-export default withRouter(ExVuex);
+export default withRouter(Father);

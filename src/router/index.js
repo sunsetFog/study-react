@@ -1,15 +1,19 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {hot} from 'react-hot-loader';
 import Store from '../redux';
 import DevTools from '../redux/DevTools';
-// import App from '../containers/app';
-// import Docs from '../containers/docs';
+import Fairyland from '../containers/fairyland/index';
+import Docs from '../containers/fairyland/docs/index';
+
+import App from '../containers/app';
 
 // import lifeCycle from '../containers/lifeCycle';
 
-import Nice from '../containers/nice/index.js';
+import Nice from '~/containers/home/index.js';
+
+import NotFound from '~/containers/404';
 
 
 const Router = ({component: Component, children, ...rest}) => (
@@ -37,12 +41,41 @@ const Root = () => (
       <div className="router-content">
         {__DEVELOPMENT__ && <DevTools />}
         <Switch>
-          <Router path="/" component={Nice}>
-            {/* <Route exact path="/lifeCycle" component={lifeCycle}></Route> */}
+          {/* 
+              这相当于vue的app.vue
+           */}
+          <Router path="/" component={App} >
+
+            {/* 
+                注意用的是Route，Router嵌套时用
+                exact是精确匹配
+            */}
+            {/* <Route exact path="/login" component={Login} /> */}
+
+            <Router path="/home" component={Nice}>
+              
+            </Router>
+
+            <Router path="/fairyland" component={Fairyland} >
+              <Router exact path="/fairyland/docs" component={Docs} />
+              <Redirect to="/fairyland/docs" />
+            </Router>
+
+            {/* 
+                /去的页面
+            */}
+            <Redirect from="/" exact to="/home/lifeCycle" />
+
+            {/* 
+                404找不到页面
+             */}
+            <Route path="*" component={NotFound} />
+          
+
+            
+
+
           </Router>
-          {/* <Router path="/" component={App} >
-            <Router exact path="/docs" component={Docs} />
-          </Router> */}
         </Switch>
       </div>
     </Provider>

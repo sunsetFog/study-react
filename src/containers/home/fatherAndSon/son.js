@@ -2,9 +2,17 @@ import React, {Component} from 'react';
 // 状态管理
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import * as niceActions from '../../redux/reduces/nice.js';
+import * as niceActions from '~/redux/reduces/nice.js';
 
 import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
+
+/*
+类型检测prop-types的基本使用
+https://www.cnblogs.com/xuwennn/p/prop-types.html
+在子组件中导入
+当父子组件间通过props传递数据时，通过对组件数据进行类型检测，有效监控数据 —— 当数据传递类型出错或者传递空数据可以迅速找到出错的准确位置，更省时方便
+ */
+import  PropTypes  from  'prop-types'  
 
 
 @connect(
@@ -12,7 +20,10 @@ import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 
     dispatch => bindActionCreators(niceActions, dispatch)
 )
 
-class ExAxios extends Component {
+class Son extends Component {
+    static propTypes = {
+        param1: PropTypes.string
+    }
     /*
         数据
      */
@@ -24,35 +35,27 @@ class ExAxios extends Component {
      */
     constructor(props) {
         super(props);
-        console.log("--constructor--数据的初始化");
+        console.log("--constructor--Son数据的初始化");
         console.log("父组件传的参数=", this.props);
-        // study: http请求
-        customAxios.get('http://localhost:8062/sky/menu/btnList')
-        .then((response) => {
-            console.log("then=", response);
-        })
-        .catch(error => {
-            console.log("catch=", error);
-        });
     }
     /*
         组件第一次渲染完成，此时dom节点已经生成，可以在这里调用ajax请求，返回数据setState后组件会重新渲染
      */
     componentDidMount() {
-        console.log("--componentDidMount--渲染完成");
+        console.log("--componentDidMount--Son渲染完成");
     }
     /*
         完成组件的卸载和数据的销毁
      */
     componentWillUnmount () {
-        console.log("--componentWillUnmount--卸载");
+        console.log("--componentWillUnmount--Son卸载");
     }
     render() {
 
       return (
-        <div>++++自定义Axios++++</div>
+        <div>++++子组件++++</div>
       );
     }
 }
 
-export default withRouter(ExAxios);
+export default withRouter(Son);

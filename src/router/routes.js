@@ -1,17 +1,17 @@
-import LifeCycle from '~/containers/lifeCycle';
-import attrBind from '~/containers/attrBind';
-import Father from '~/containers/fatherAndSon/father';
-import Jump from '~/containers/exJump';
-import ExAxios from '~/containers/exAxios';
-import ExVuex from '~/containers/exVuex';
-import ExCache from '~/containers/exCache';
+import LifeCycle from '~/containers/home/lifeCycle';
+import attrBind from '~/containers/home/attrBind';
+import Father from '~/containers/home/fatherAndSon/father';
+import Jump from '~/containers/home/exJump';
+import ExAxios from '~/containers/home/exAxios';
+import ExVuex from '~/containers/home/exVuex';
+import ExCache from '~/containers/home/exCache';
 
 export const routes = [
-    { path: '/lifeCycle', component: LifeCycle },
-    { path: '/attrBind', component: attrBind },
-    { path: '/father', component: Father },
-    { path: '/jump', component: Jump },
-    { path: '/exAxios', component: ExAxios },
-    { path: '/exVuex', component: ExVuex },
-    { path: '/exCache', component: ExCache }
+    { path: '/home/lifeCycle', component: LifeCycle },
+    { path: '/home/attrBind', component: attrBind },
+    { path: '/home/father', component: Father },
+    { path: '/home/jump', component: Jump },
+    { path: '/home/exAxios', component: ExAxios },
+    { path: '/home/exVuex', component: ExVuex },
+    { path: '/home/exCache', component: ExCache }
 ];
