@@ -45,7 +45,7 @@ npm start //运行项目
 | bundleAnalyzerReport  | Boolean  | 是否使用打包编译完成后显示依赖分析  |
 
 
-
+样式依赖
 node-sass
 less less-loader
 stylus stylus-loader    Stylus跟Less完全一样
