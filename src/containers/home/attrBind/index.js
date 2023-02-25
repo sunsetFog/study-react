@@ -35,9 +35,9 @@ class attrBind extends Component {
               },
           })
       }
-
+      //   section是仅有一个最外层标签
       return (
-        <div>
+        <section>
             ++++属性绑定++++
             <div className="radish">
               class类名
@@ -49,7 +49,7 @@ class attrBind extends Component {
             <img style={{width: '40px', height: '40px'}} src={logoimg}/>
             <br></br>
             <Button type="primary" onClick={exit}>返回登录</Button>
-        </div>
+        </section>
       );
     }
 }

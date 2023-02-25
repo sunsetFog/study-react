@@ -27,9 +27,7 @@ class Nice extends Component {
       
     }
     componentWillMount() {
-      console.log("--00ok--", this.props);
-      this.props.changeApple({ bbb: 'KI' });
-      console.log("--11ok--", this.props);
+      
     }
     render() {
     //   const {home: {movelogo}} = this.props;

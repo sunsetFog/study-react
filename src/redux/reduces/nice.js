@@ -6,28 +6,28 @@ const initialState = {
   water: '水'
 };
 
-// 默认导出   action = { type: 'set_userinfo' }
+// 默认导出   action传参 = { type: 'set_userinfo' }
 export default function reducer(state = initialState, action = {}) {
-  console.log("顺序2=", action);
+  console.log("顺序2=入参", action);
+  // 深拷贝state
+  let takeState = JSON.parse(JSON.stringify(state));
   switch (action.type) {
     case set_userinfo:
+      takeState.water = action.water;
       console.log("Are you ok?");
-      // 返回state 
-      return {
-        ...state,
-        movelogo: false,
-        hhh: 'OH NO!'
-      };
+      // 返回state
+      return takeState;
     default:
       return state;
   }
 }
 
-// action
+// action 可以异步，接口就是异步js
 export function changeApple(data) {
-  console.log("顺序1=", data);
+  console.log("顺序1=入参", data);
   return {
     type: set_userinfo,
-    ...data
+    ...data,
+    // promise: axios.get('/api/getuser')
   };
 }

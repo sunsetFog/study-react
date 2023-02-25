@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {hot} from 'react-hot-loader';
+// 引入vuex
 import Store from '../redux';
 import DevTools from '../redux/DevTools';
 import Fairyland from '../containers/fairyland/index';
@@ -37,6 +38,9 @@ exact表示是否精确匹配
 */
 const Root = () => (
   <BrowserRouter>
+    {/* 
+        全局vuex
+     */}
     <Provider store={Store}>
       <div className="router-content">
         {__DEVELOPMENT__ && <DevTools />}

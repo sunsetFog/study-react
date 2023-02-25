@@ -6,10 +6,12 @@ import * as niceActions from '~/redux/reduces/nice.js';
 
 import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
 
+import { Button } from 'antd';
 
+// 这步能在this.props里使用state，action方法
 @connect(
-    state => ({nice: state.nice}),
-    dispatch => bindActionCreators(niceActions, dispatch)
+    state => ({nice: state.nice}),// this.props对象里加state属性
+    dispatch => bindActionCreators(niceActions, dispatch)// this.props对象里加action方法
 )
 
 class ExVuex extends Component {
@@ -24,7 +26,7 @@ class ExVuex extends Component {
      */
     constructor(props) {
         super(props);
-        console.log("--constructor--数据的初始化");
+        console.log("--constructor--数据的初始化", this);
     }
     /*
         组件第一次渲染完成，此时dom节点已经生成，可以在这里调用ajax请求，返回数据setState后组件会重新渲染
@@ -38,10 +40,21 @@ class ExVuex extends Component {
     componentWillUnmount () {
         console.log("--componentWillUnmount--卸载");
     }
+
+    changeApple() {
+        // 调用action方法
+        this.props.changeApple({ water: '冰' });
+        console.log("--changeApple--", this);
+    }
+
     render() {
+        console.log("--dom更新--", this.props);
 
       return (
-        <div>++++状态管理++++</div>
+        <div>++++状态管理++++
+            <br/>
+            <Button type="primary" onClick={this.changeApple.bind(this)}>调用changeApple</Button>
+        </div>
       );
     }
 }

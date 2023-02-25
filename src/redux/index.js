@@ -7,7 +7,9 @@ const enhancer = compose(
   applyMiddleware(reduxOrder()),
   DevTools.instrument()
 );
-
+/*
+API 文档：createStore实例化vuex
+*/
 const store = createStore(
   reducers,
   enhancer
