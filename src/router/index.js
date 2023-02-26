@@ -56,10 +56,17 @@ const Root = () => (
             */}
             {/* <Route exact path="/login" component={Login} /> */}
 
+
+            {/* 
+                study: 二级路由，方式1
+            */}
             <Router path="/home" component={Nice}>
               
             </Router>
 
+            {/* 
+                study: 二级路由，方式2
+             */}
             <Router path="/fairyland" component={Fairyland} >
               <Router exact path="/fairyland/docs" component={Docs} />
               <Redirect to="/fairyland/docs" />

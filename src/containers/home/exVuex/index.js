@@ -11,10 +11,10 @@ import { Button } from 'antd';
 // 引入vuex   Store在API文档
 import Store from '~/redux';
 
-// 这步能在this.props里使用state，action方法
+// connect作用：this.props对象里加入state，dispatch，action方法 的属性
 @connect(
-    state => ({nice: state.nice}),// this.props对象里加state属性
-    dispatch => bindActionCreators(niceActions, dispatch)// this.props对象里加action方法
+    state => ({nice: state.nice}),
+    dispatch => bindActionCreators(niceActions, dispatch)
 )
 
 class ExVuex extends Component {
@@ -51,7 +51,7 @@ class ExVuex extends Component {
         // this.props.changeApple({ water: '冰' });
 
         // 方法二：直接到顺序2
-        Store.dispatch({type: 'set_userinfo', water: '冰' });
+        Store.dispatch({type: 'set_userinfo', water: '冰' });// water名用payload更好些
 
         console.log("--changeApple--", this);
     }
@@ -67,5 +67,5 @@ class ExVuex extends Component {
       );
     }
 }
-
+// 所以页面加withRouter作用：this.props对象里加入history属性，用于跳转  this.props.history.push(value.key);
 export default withRouter(ExVuex);

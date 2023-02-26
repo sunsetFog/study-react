@@ -35,6 +35,7 @@ class Fairyland extends Component {
         </div>
         <div style={{width: '1000px', margin: '0 auto'}}>
             {/* 
+                study: 二级路由，方式2
                 路由视图
              */}
           {this.props.children}

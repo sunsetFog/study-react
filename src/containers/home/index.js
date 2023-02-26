@@ -48,6 +48,7 @@ class Nice extends Component {
                 <Link to="/attrBind">酷酷酷</Link>
               </div>
               {/* 
+                  study: 二级路由，方式1
                   等于vue路由视图：
                   Redirect表示以上匹配失败
                   默认重定向

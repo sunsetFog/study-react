@@ -5,7 +5,7 @@ import Jump from '~/containers/home/exJump';
 import ExAxios from '~/containers/home/exAxios';
 import ExVuex from '~/containers/home/exVuex';
 import ExCache from '~/containers/home/exCache';
-
+// study: 二级路由，方式1
 export const routes = [
     { path: '/home/lifeCycle', component: LifeCycle },
     { path: '/home/attrBind', component: attrBind },
