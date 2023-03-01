@@ -16,38 +16,67 @@ import Son from './son';
 )
 
 class Father extends Component {
-    /*
-        数据
-     */
-    state = {
 
+    state = {
+        hill: '山6',
+        water: '水6',
     }
-    /*
-        完成了React数据的初始化，还未渲染DOM，它接受两个参数：props和context，当想在函数内部使用这两个参数时，需使用super()传入这两个参数。
-     */
+
     constructor(props) {
         super(props);
         console.log("--constructor--数据的初始化");
     }
-    /*
-        组件第一次渲染完成，此时dom节点已经生成，可以在这里调用ajax请求，返回数据setState后组件会重新渲染
-     */
+
     componentDidMount() {
         console.log("--componentDidMount--渲染完成");
+        console.log("--打印this--", this);
+        console.log("ref指向Dom，this里建属性", this.inputName.value)
+        console.log("ref指向Dom", this.refs.fruit);
     }
-    /*
-        完成组件的卸载和数据的销毁
-     */
-    componentWillUnmount () {
-        console.log("--componentWillUnmount--卸载");
+
+    componentWillReceiveProps() {
+        console.log("--componentWillReceiveProps--props改变才触发，父子组件传参用");
     }
+    peach = () => {
+        console.log("peach=");
+        this.setState({
+            hill: '变桃子'
+        })
+    }
+
     render() {
+        const { hill, water } = this.state;
+        let draw = {
+            hill: hill,
+            water: water,
+            flower: function(value) {
+                console.log("子传父", value);
+            }
+        }
 
       return (
         <section>
             ++++父组件++++
             <br/>
-            <Son param1={123} param2="c" func1={()=>{console.log('func1')}} ></Son>
+            {/* 
+                ref指向Dom, 就可以this.inputName.value
+            */}
+            <input type="text" ref={(input) => {this.inputName = input}} defaultValue="哈喽"></input>
+            <div ref="fruit">
+                可可
+            </div>
+
+            <button onClick={this.peach.bind(this)}>修改父数据</button>
+            {/* 
+                hill参数会注入this.props对象里
+                {...draw} 简写   注入对象所有
+                Son用不了ref
+            */}
+            {/* <Son water={12}></Son> */}
+
+            <Son {...draw}></Son>
+
+            
         </section>
       );
     }

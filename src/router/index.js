@@ -27,17 +27,28 @@ const Router = ({component: Component, children, ...rest}) => (
 );
 
 /*
-去掉url的"#"号:
-1.BrowserRouter 替换 HashRouter   不好用
+
 react-router-dom V6 中文文档教程总结
 https://blog.csdn.net/xm1037782843/article/details/127454966
 react-router-dom 中文文档
 https://blog.csdn.net/sinat_17775997/article/details/120904801
 
 exact表示是否精确匹配
+
+Switch避免重复匹配
+HashRouter 哈希路由 有#
+BrowserRouter 没有#
+Route注册路由
 */
 const Root = () => (
   <BrowserRouter>
+    {/* 
+      这相当于vue的app.vue   方式1
+
+        BrowserRouter里加   <App/>
+    
+    */}
+    
     {/* 
         全局vuex
      */}
@@ -46,7 +57,7 @@ const Root = () => (
         {__DEVELOPMENT__ && <DevTools />}
         <Switch>
           {/* 
-              这相当于vue的app.vue
+              这相当于vue的app.vue    方式2
            */}
           <Router path="/" component={App} >
 

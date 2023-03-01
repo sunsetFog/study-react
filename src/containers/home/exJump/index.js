@@ -13,42 +13,30 @@ import { HashRouter as Router, Route, Switch, Redirect, Link, NavLink, withRoute
 )
 
 class Jump extends Component {
-    /*
-        数据
-     */
+
     state = {
 
     }
-    /*
-        完成了React数据的初始化，还未渲染DOM，它接受两个参数：props和context，当想在函数内部使用这两个参数时，需使用super()传入这两个参数。
-     */
+
     constructor(props) {
         super(props);
-        console.log("--constructor--数据的初始化");
-        console.log("父组件传的参数=", this.props);
+        console.log("--路由参数在props.match里", this);
     }
-    /*
-        组件第一次渲染完成，此时dom节点已经生成，可以在这里调用ajax请求，返回数据setState后组件会重新渲染
-     */
-    componentDidMount() {
-        console.log("--componentDidMount--渲染完成");
-    }
-    /*
-        完成组件的卸载和数据的销毁
-     */
-    componentWillUnmount () {
-        console.log("--componentWillUnmount--卸载");
-    }
+
     render() {
 
       return (
         <section>
             {/* 
+                Link跳转
+                不可以起样式名
                 编译：<a href='/'>Home</a>
              */}
             <Link to='/home'>Home</Link>
             <br/>
             {/* 
+                NavLink跳转
+                可以起样式名
                 编译：<a href='/react' className='hurray'>React</a>
              */}
             <NavLink to='/react' activeClassName='hurray'>React</NavLink>

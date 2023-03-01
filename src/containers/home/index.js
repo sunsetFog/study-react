@@ -14,7 +14,7 @@ import MenuDesigns from '~/components/menuDesign';
 
 import { routes } from '~/router/routes';
 
-import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
+import { Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
 
 // connect的作用是将组件和models结合在一起。将models中的state绑定到组件的props中。并提供一些额外的功能，譬如dispatch
 @connect(
@@ -58,13 +58,13 @@ class Nice extends Component {
               
               */}
               <main style={{ padding: '15px' }}>
-                {/* <Router> */}
+
                   <Switch>
                     {routes.map(item => true && <Route render={() => <item.component />} key={item.path} path={item.path} />)}
                     
                     <Redirect to="/home/lifeCycle" />
                   </Switch>
-                {/* </Router> */}
+
               </main>
             </div>
         </div>

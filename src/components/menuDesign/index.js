@@ -76,7 +76,7 @@ class menuDesign extends Component {
           this.getItem('生命周期', '/home/lifeCycle'),
           this.getItem('属性绑定', '/home/attrBind'),
           this.getItem('父子组件', '/home/father'),
-          this.getItem('跳转', '/home/jump'),
+          this.getItem('跳转', '/home/jump/12'),
           this.getItem('自定义axios', '/home/exAxios'),
           this.getItem('状态管理', '/home/exVuex'),
           this.getItem('缓存', '/home/exCache'),

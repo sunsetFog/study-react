@@ -7,10 +7,7 @@ import * as niceActions from '~/redux/reduces/nice.js';
 import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
 
 /*
-类型检测prop-types的基本使用
-https://www.cnblogs.com/xuwennn/p/prop-types.html
-在子组件中导入
-当父子组件间通过props传递数据时，通过对组件数据进行类型检测，有效监控数据 —— 当数据传递类型出错或者传递空数据可以迅速找到出错的准确位置，更省时方便
+在react官网搜索propTypes
  */
 import  PropTypes  from  'prop-types'  
 
@@ -21,39 +18,39 @@ import  PropTypes  from  'prop-types'
 )
 
 class Son extends Component {
+    // 指定props类型
     static propTypes = {
-        param1: PropTypes.string
+        hill: PropTypes.string
     }
-    /*
-        数据
-     */
+    // props默认值
+    static defaultProps = {
+        hill: 'props默认值'
+    }
+
     state = {
 
     }
-    /*
-        完成了React数据的初始化，还未渲染DOM，它接受两个参数：props和context，当想在函数内部使用这两个参数时，需使用super()传入这两个参数。
-     */
+
     constructor(props) {
         super(props);
         console.log("--constructor--Son数据的初始化");
         console.log("父组件传的参数=", this.props);
     }
-    /*
-        组件第一次渲染完成，此时dom节点已经生成，可以在这里调用ajax请求，返回数据setState后组件会重新渲染
-     */
-    componentDidMount() {
-        console.log("--componentDidMount--Son渲染完成");
-    }
-    /*
-        完成组件的卸载和数据的销毁
-     */
-    componentWillUnmount () {
-        console.log("--componentWillUnmount--Son卸载");
+
+    // 子传父也是用props属性
+    cakes() {
+        this.props.flower('子组件参数');
     }
     render() {
-
+        const { hill } = this.props;
       return (
-        <div>++++子组件++++</div>
+        <div>
+            ++++++++++++++++++++++++子组件++++++++++++++++++++++++
+            <br/>
+            父组件数据：{hill}
+            <br/>
+            <button onClick={this.cakes.bind(this)}>子传父</button>
+        </div>
       );
     }
 }

@@ -6,6 +6,9 @@
 # 安装react-cli脚手架
 ```
 npm install -g build-react
+或
+npm install -g create-react-app
+create-react-app new-react
 ```
 ### Usage   使用脚手架搭建项目
 ```
@@ -54,3 +57,5 @@ stylus stylus-loader    Stylus跟Less完全一样
 路由守卫
 
 react+dva+antd+umi项目
+
+react框架作用：模块化、组件化、工程化

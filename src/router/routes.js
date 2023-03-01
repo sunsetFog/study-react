@@ -10,7 +10,7 @@ export const routes = [
     { path: '/home/lifeCycle', component: LifeCycle },
     { path: '/home/attrBind', component: attrBind },
     { path: '/home/father', component: Father },
-    { path: '/home/jump', component: Jump },
+    { path: '/home/jump/:id', component: Jump },
     { path: '/home/exAxios', component: ExAxios },
     { path: '/home/exVuex', component: ExVuex },
     { path: '/home/exCache', component: ExCache }

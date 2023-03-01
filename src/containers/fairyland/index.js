@@ -37,6 +37,7 @@ class Fairyland extends Component {
             {/* 
                 study: 二级路由，方式2
                 路由视图
+                要是函数组件没有this {props.children}
              */}
           {this.props.children}
         </div>
