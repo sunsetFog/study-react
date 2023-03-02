@@ -14,28 +14,13 @@ class App extends Component {
   state = {
   }
   componentWillMount() {
-    const {initalLogo} = this.props;
-    initalLogo();
-    console.log("home=", this.props);
+
   }
-  handleBrowserChange = () => {
-    const {history, changeRoute} = this.props;
-    changeRoute();
-    history.push('/docs');
-  }
+
   render() {
     const {home: {movelogo}} = this.props;
     return (
       <div className="home" style={{paddingTop: 0}}>
-        {/* <div className={`center ${movelogo ? 'logo-move' : ''}`} onClick={this.handleBrowserChange}>
-          <div className="logo-box">
-            <img src={logo} className="logo" />
-          </div>
-          <h1>React Project</h1>
-        </div>
-        <div style={{width: '1000px', margin: '0 auto'}}>
-          {this.props.children}
-        </div> */}
 
         {/* 
             路由视图

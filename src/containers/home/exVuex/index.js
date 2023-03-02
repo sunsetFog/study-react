@@ -34,7 +34,10 @@ class ExVuex extends Component {
         // 方法一：用this.props
         // this.props.changeApple({ water: '冰' });
 
-        // 方法二：直接到顺序2
+        /*
+            方法二：直接到顺序2
+            Store.dispatch(this.props.changeApple({ water: '冰' })); 这个就经过action方法了
+         */
         Store.dispatch({type: 'set_userinfo', water: '冰' });// water名用payload更好些
 
         console.log("--changeApple--", this);
