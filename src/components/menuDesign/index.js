@@ -80,6 +80,7 @@ class menuDesign extends Component {
           this.getItem('自定义axios', '/home/exAxios'),
           this.getItem('状态管理', '/home/exVuex'),
           this.getItem('缓存', '/home/exCache'),
+          this.getItem('函数组件', '/home/cosplay'),
         ])
       ];
 

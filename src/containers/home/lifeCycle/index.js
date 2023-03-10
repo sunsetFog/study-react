@@ -88,7 +88,7 @@ class lifeCycle extends Component {
     /*
         普通方法
         this是undefined
-        改变this指向  .bind(this)
+        改变this指向当前的组件实例对象---方式1  .bind(this)
      */
     waterWay(event) {
         event.preventDefault();// 阻止默认行为
@@ -101,6 +101,11 @@ class lifeCycle extends Component {
     unloadWay() {
         ReactDOM.unmountComponentAtNode(document.getElementById('app'));
     }
+    fabulous(event, num) {
+        console.log("改变this指向当前的组件实例对象---方式2", this);
+        console.log("获取事件对象=", event)
+        console.log("事件绑定并传递额外参数=", num);
+    }
     /*
         用于插入虚拟DOM
      */
@@ -112,6 +117,8 @@ class lifeCycle extends Component {
       return (
         <div>
             ++++生命周期++++
+            <br/>
+            <button onClick={(event)=>this.fabulous(event, 999)}>事件绑定并改变this指向</button>
             <br/>
             <button onClick={this.waterWay.bind(this)}>更新state</button>
             <br></br>

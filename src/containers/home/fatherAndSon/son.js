@@ -9,7 +9,9 @@ import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 
 /*
 在react官网搜索propTypes
  */
-import  PropTypes  from  'prop-types'  
+import  PropTypes  from  'prop-types';
+
+import Grandson from './grandson';
 
 
 @connect(
@@ -50,6 +52,8 @@ class Son extends Component {
             父组件数据：{hill}
             <br/>
             <button onClick={this.cakes.bind(this)}>子传父</button>
+            <br></br>
+            <Grandson></Grandson>
         </div>
       );
     }

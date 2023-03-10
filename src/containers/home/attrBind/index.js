@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component,useState} from 'react';
 // 状态管理
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
@@ -25,6 +25,8 @@ class attrBind extends Component {
     }
 
     render() {
+        // const [count, setCount] = useState(0);
+        console.log("--useState--", this);
 
       // 退出登录
       const exit = () => {

@@ -20,6 +20,7 @@ class Father extends Component {
     state = {
         hill: '山6',
         water: '水6',
+        message: '父组件的数据'
     }
 
     constructor(props) {
@@ -73,8 +74,13 @@ class Father extends Component {
                 Son用不了ref
             */}
             {/* <Son water={12}></Son> */}
+            
+            <DefineContext.Provider value={this.state.message}>
 
-            <Son {...draw}></Son>
+                <Son {...draw}></Son>
+            
+            </DefineContext.Provider>
+            
 
             
         </section>

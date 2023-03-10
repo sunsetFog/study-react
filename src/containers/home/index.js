@@ -43,9 +43,7 @@ class Nice extends Component {
 
             <div className='home-right'>
               <div className="header">
-                <Link to="/lifeCycle">哈哈</Link>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <Link to="/attrBind">酷酷酷</Link>
+
               </div>
               {/* 
                   study: 二级路由，方式1

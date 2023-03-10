@@ -59,3 +59,10 @@ stylus stylus-loader    Stylus跟Less完全一样
 react+dva+antd+umi项目
 
 react框架作用：模块化、组件化、工程化
+
+视频学习：
+课题：React入门到实战
+关注：柴柴_前端教书匠
+
+学习文档：
+https://www.yuque.com/fechaichai/qeamqf
