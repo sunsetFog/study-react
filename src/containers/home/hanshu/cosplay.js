@@ -3,6 +3,7 @@ import React, {useState,useEffect,useRef,useContext} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
+
 /*
 为了能让函数组件可以拥有自己的状态，所以从react v16.8开始，Hooks应运而生
 */

@@ -29,3 +29,15 @@ export const counterSlice = createSlice({
   export const { increment, decrement, incrementByAmount } = counterSlice.actions
   
   export default counterSlice.reducer
+
+// 但是实例化store要用configureStore
+// import { configureStore } from '@reduxjs/toolkit'
+
+// import counterStore from './counterStore'
+
+// export default configureStore({
+//   reducer: {
+//     // 注册子模块
+//     counterStore
+//   }
+// })

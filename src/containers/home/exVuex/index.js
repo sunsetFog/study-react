@@ -11,6 +11,7 @@ import { Button } from 'antd';
 // 引入vuex   Store在API文档
 import Store from '~/redux';
 
+
 // connect作用：this.props对象里加入state，dispatch，action方法 的属性
 @connect(
     state => ({nice: state.nice}),
@@ -32,13 +33,13 @@ class ExVuex extends Component {
     changeApple() {
         // 调用action方法
         // 方法一：用this.props
-        // this.props.changeApple({ water: '冰' });
+        // this.props.changeApple({ payload: '冰' });
 
         /*
             方法二：直接到顺序2
-            Store.dispatch(this.props.changeApple({ water: '冰' })); 这个就经过action方法了
+            Store.dispatch(this.props.changeApple({ payload: '冰' })); 这个就经过action方法了
          */
-        Store.dispatch({type: 'set_userinfo', water: '冰' });// water名用payload更好些
+        Store.dispatch({type: 'set_userinfo', payload: '冰' });
 
         console.log("--changeApple--", this);
     }

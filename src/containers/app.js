@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     const {home: {movelogo}} = this.props;
     return (
-      <div className="home" style={{paddingTop: 0}}>
+      <div className="app-vue" style={{height: '100%'}}>
 
         {/* 
             路由视图
