@@ -13,7 +13,7 @@ import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 
 class App extends Component {
   state = {
   }
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
 
   }
 

@@ -25,7 +25,7 @@ import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 
 class menuDesign extends Component {
     state = {
     }
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
       
     }
     // 导航菜单方法

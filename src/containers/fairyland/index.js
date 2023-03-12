@@ -13,7 +13,7 @@ import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 
 class Fairyland extends Component {
   state = {
   }
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const {initalLogo} = this.props;
     initalLogo();
     console.log("home=", this.props);

@@ -26,7 +26,7 @@ class Nice extends Component {
     state = {
       
     }
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
       
     }
     render() {

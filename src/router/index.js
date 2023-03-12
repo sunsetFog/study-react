@@ -10,7 +10,6 @@ import Docs from '../containers/fairyland/docs/index';
 
 import App from '../containers/app';
 
-// import lifeCycle from '../containers/lifeCycle';
 
 import Nice from '~/containers/home/index.js';
 

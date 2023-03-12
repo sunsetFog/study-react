@@ -13,7 +13,16 @@ import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 
     dispatch => bindActionCreators(niceActions, dispatch)
 )
 
-class lifeCycle extends Component {
+/*
+从React版本16.3开始，以下组件生命周期方法正在逐步淘汰。
+UNSAFE_componentWillMount
+UNSAFE_componentWillReceiveProps
+UNSAFE_componentWillUpdate
+所以控制台有黄色警告
+如果要使用这些方法，请在方法前面加上UNSAFE_
+*/
+
+class LifeOfCycle extends Component {
     /*
         数据
         组件被称之为状态机 通过更新state来更新组件的视图展示
@@ -37,8 +46,8 @@ class lifeCycle extends Component {
         将要插入虚拟dom
         一般用的比较少，它更多的是在服务端渲染时使用。它代表的过程是组件已经经历了constructor()初始化数据后，但是还未渲染DOM时。
      */
-    componentWillMount() {
-      console.log("--componentWillMount--初始化渲染顺序2");
+    UNSAFE_componentWillMount() {
+      console.log("--UNSAFE_componentWillMount--初始化渲染顺序2");
     }
     /*
         已经插入虚拟DOM，渲染完成
@@ -56,8 +65,8 @@ class lifeCycle extends Component {
     /*
         将要更新回调
      */
-    componentWillUpdate() {
-        console.log("--componentWillUpdate--每次更新state顺序1");
+    UNSAFE_componentWillUpdate() {
+        console.log("--UNSAFE_componentWillUpdate--每次更新state顺序1");
     }
     /*
         已经更新回调
@@ -77,8 +86,8 @@ class lifeCycle extends Component {
     /*
         props改变才触发，父子组件传参用
      */
-    componentWillReceiveProps() {
-        console.log("--componentWillReceiveProps--props改变才触发，父子组件传参用");
+    UNSAFE_componentWillReceiveProps() {
+        console.log("--UNSAFE_componentWillReceiveProps--props改变才触发，父子组件传参用");
     }
 
 
@@ -128,4 +137,4 @@ class lifeCycle extends Component {
     }
 }
 
-export default withRouter(lifeCycle);
+export default withRouter(LifeOfCycle);

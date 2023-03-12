@@ -35,8 +35,8 @@ class Father extends Component {
         console.log("ref指向Dom", this.refs.fruit);
     }
 
-    componentWillReceiveProps() {
-        console.log("--componentWillReceiveProps--props改变才触发，父子组件传参用");
+    UNSAFE_componentWillReceiveProps() {
+        console.log("--UNSAFE_componentWillReceiveProps--props改变才触发，父子组件传参用");
     }
     peach = () => {
         console.log("peach=");

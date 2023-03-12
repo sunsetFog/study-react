@@ -20,7 +20,7 @@ import { Button, theme, Modal } from 'antd'
 class attrBind extends Component {
     state = {
     }
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
       
     }
 
