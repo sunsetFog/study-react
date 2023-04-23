@@ -30,7 +30,7 @@ class Son extends Component {
     }
 
     state = {
-
+        peach: this.props.hill
     }
 
     constructor(props) {
@@ -38,18 +38,33 @@ class Son extends Component {
         console.log("--constructor--Son数据的初始化");
         console.log("父组件传的参数=", this.props);
     }
+    /*
+        getDerivedStateFromProps组件生命周期，调用 render 方法之前调用
+        父传子
+        作用：props变化时更新state
+        https://www.runoob.com/react/react-ref-getderivedstatefromprops.html
+    */
+    static getDerivedStateFromProps(nextProps, prevState) {
+        console.log("--props变化时更新state--", nextProps, "---", prevState);
+        return {
+            peach: nextProps.hill,
+        }
+    }
 
     // 子传父也是用props属性
     cakes() {
         this.props.flower('子组件参数');
     }
     render() {
-        const { hill } = this.props;
+        const {
+            state: { peach },
+            props: { hill }
+        } = this
       return (
         <div>
             ++++++++++++++++++++++++子组件++++++++++++++++++++++++
             <br/>
-            父组件数据：{hill}
+            父组件数据：{peach}
             <br/>
             <button onClick={this.cakes.bind(this)}>子传父</button>
             <br></br>

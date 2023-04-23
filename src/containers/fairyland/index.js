@@ -24,10 +24,10 @@ class Fairyland extends Component {
     history.push('/fairyland/docs');
   }
   render() {
-    const {home: {movelogo}} = this.props;
+
     return (
       <div className="home" style={{paddingTop: 0}}>
-        <div className={`center ${movelogo ? 'logo-move' : ''}`} onClick={this.handleBrowserChange}>
+        <div className={`center logo-move`} onClick={this.handleBrowserChange}>
           <div className="logo-box">
             <img src={logo} className="logo" />
           </div>

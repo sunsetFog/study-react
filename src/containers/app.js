@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   render() {
-    const {home: {movelogo}} = this.props;
+
     return (
       <div className="app-vue" style={{height: '100%'}}>
 

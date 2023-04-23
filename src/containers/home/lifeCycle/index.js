@@ -97,9 +97,9 @@ class LifeOfCycle extends Component {
     /*
         普通方法
         this是undefined
-        改变this指向当前的组件实例对象---方式1  .bind(this)
      */
     waterWay(event) {
+        console.log("改变this指向当前的组件实例对象---方式1看事件绑定", this);
         event.preventDefault();// 阻止默认行为
         console.log("--waterWay--", event);
         this.setState({
@@ -107,13 +107,13 @@ class LifeOfCycle extends Component {
         });
         console.log("地道道=this.state", this.state);
     }
-    unloadWay() {
-        ReactDOM.unmountComponentAtNode(document.getElementById('app'));
-    }
     fabulous(event, num) {
-        console.log("改变this指向当前的组件实例对象---方式2", this);
+        console.log("改变this指向当前的组件实例对象---方式2看事件绑定", this);
         console.log("获取事件对象=", event)
         console.log("事件绑定并传递额外参数=", num);
+    }
+    unloadWay() {
+        ReactDOM.unmountComponentAtNode(document.getElementById('app'));
     }
     /*
         用于插入虚拟DOM
@@ -126,6 +126,13 @@ class LifeOfCycle extends Component {
       return (
         <div>
             ++++生命周期++++
+            {/* 
+                空标签<></>  相当于vue的template标签
+                现在是<React.Fragment> 若上面import React, { Component, Fragment } from 'react';  就用 <Fragment>
+            */}
+            <React.Fragment>
+                空标签
+            </React.Fragment>
             <br/>
             <button onClick={(event)=>this.fabulous(event, 999)}>事件绑定并改变this指向</button>
             <br/>

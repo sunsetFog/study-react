@@ -30,7 +30,7 @@ class Nice extends Component {
       
     }
     render() {
-    //   const {home: {movelogo}} = this.props;
+
       return (
         <div className='home-box' style={{paddingTop: 0}}>
             <div className='home-left'>

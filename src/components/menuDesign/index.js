@@ -15,6 +15,8 @@ import { browserHistory } from 'react-router'
 
 import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
 
+import { first_arr, second_arr } from '~/router/routes'
+
 
 // connect的作用是将组件和models结合在一起。将models中的state绑定到组件的props中。并提供一些额外的功能，譬如dispatch
 @connect(
@@ -67,21 +69,23 @@ class menuDesign extends Component {
     }
 
     render() {
-    //   const {home: {movelogo}} = this.props;
+    // console.log("--first_arr--", first_arr)
+    let box1 = []
+    for (let i = 0; i < first_arr.length; i++) {
+      const item = first_arr[i];
+      box1.push(this.getItem(item.name, item.path))
+    }
 
-    
+    let box2 = []
+    for (let i = 0; i < second_arr.length; i++) {
+      const item = second_arr[i];
+      box2.push(this.getItem(item.name, item.path))
+    }
+    // console.log("--box1--", box1)
       
       const items = [
-        this.getItem('知识点', 'sub4', <AppstoreOutlined />, [
-          this.getItem('生命周期', '/home/lifeCycle'),
-          this.getItem('属性绑定', '/home/attrBind'),
-          this.getItem('父子组件', '/home/father'),
-          this.getItem('跳转', '/home/jump/12'),
-          this.getItem('自定义axios', '/home/exAxios'),
-          this.getItem('状态管理', '/home/exVuex'),
-          this.getItem('缓存', '/home/exCache'),
-          this.getItem('函数组件', '/home/cosplay'),
-        ])
+        this.getItem('知识点', 'sub1', <AppstoreOutlined />, box1),
+        this.getItem('函数组件', 'sub2', <AppstoreOutlined />, box2)
       ];
 
       return (

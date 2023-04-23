@@ -10,6 +10,12 @@ import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 
 function Cosplay(props) {
     const [count, setCount] = useState(0);
     const h1Foo = useRef(null);
+    // 用于跳转
+    // const history = useHistory()
+    // history.push({
+    //     pathname: key,
+    //     state: { platform },
+    // })
     /*
         函数副作用
         什么是副作用：

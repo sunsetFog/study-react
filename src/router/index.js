@@ -3,8 +3,11 @@ import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {hot} from 'react-hot-loader';
 // 引入vuex
-import Store from '../redux';
-import DevTools from '../redux/DevTools';
+// import Store from '../redux';
+// import DevTools from '../redux/DevTools';
+
+import Store from '../store';
+
 import Fairyland from '../containers/fairyland/index';
 import Docs from '../containers/fairyland/docs/index';
 
@@ -49,11 +52,11 @@ const Root = () => (
     */}
     
     {/* 
-        全局vuex
+        为React提供Redux store
      */}
     <Provider store={Store}>
       <div className="router-content">
-        {__DEVELOPMENT__ && <DevTools />}
+        {/* {__DEVELOPMENT__ && <DevTools />} */}
         <Switch>
           {/* 
               这相当于vue的app.vue    方式2
