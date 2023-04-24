@@ -23,7 +23,7 @@ class ExAxios extends Component {
         console.log("--constructor--数据的初始化");
         console.log("父组件传的参数=", this.props);
         // study: http请求
-        customAxios.get('http://localhost:8062/sky/menu/btnList')
+        customAxios.get('http://geek.itheima.net/v1_0/channels')
         .then((response) => {
             console.log("then=", response);
         })

@@ -1,8 +1,9 @@
 // React应该是底层在调用，得引入
-import React, {useState,useEffect,useRef,useContext} from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
+// import { useHistory } from 'react-router'
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter, useHistory } from 'react-router-dom';
 
 /*
 为了能让函数组件可以拥有自己的状态，所以从react v16.8开始，Hooks应运而生
@@ -10,12 +11,7 @@ import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 
 function Cosplay(props) {
     const [count, setCount] = useState(0);
     const h1Foo = useRef(null);
-    // 用于跳转
-    // const history = useHistory()
-    // history.push({
-    //     pathname: key,
-    //     state: { platform },
-    // })
+    
     /*
         函数副作用
         什么是副作用：
@@ -37,7 +33,7 @@ function Cosplay(props) {
     useEffect(()=>{
         // 发送网络请求
         async function fetchData(){
-            const res = await customAxios.get('http://localhost:8062/sky/menu/btnList')
+            const res = await customAxios.get('http://geek.itheima.net/v1_0/channels')
         }
         fetchData()
 
@@ -51,6 +47,14 @@ function Cosplay(props) {
         console.log("--beanWay--");
         setCount(9);
     }
+    const history = useHistory()
+    const jumpWay = () => {
+        history.push('/home/exRedux?title=6')
+        // history.push({
+        //     pathname: '/home/exRedux',
+        //     state: { name: '白菜' },
+        // })
+    }
     
     const [list, setList] = useState([]);
     console.log("--props--", props);
@@ -62,6 +66,8 @@ function Cosplay(props) {
             ++++++++++++++++++++++++函数组件++++++++++++++++++++++++
             <br/>
             <button onClick={beanWay} ref={h1Foo}>修改state</button>
+            ------
+            <button onClick={jumpWay}>跳转</button>
         </div>
     );
 }
