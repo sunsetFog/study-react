@@ -1,30 +1,28 @@
-import LifeCycle from '~/containers/home/lifeCycle';
-import attrBind from '~/containers/home/attrBind';
-import Father from '~/containers/home/fatherAndSon/father';
-import Jump from '~/containers/home/exJump';
-import ExAxios from '~/containers/home/exAxios';
-import ExVuex from '~/containers/home/exVuex';
-import ExCache from '~/containers/home/exCache';
-import Beautiful from '~/containers/home/beautiful';
+import LifeCycle from '~/containers/home/reactClass/lifeCycle';
+import attrBind from '~/containers/home/reactClass/attrBind';
+import Father from '~/containers/home/reactClass/fatherAndSon/father';
+import Jump from '~/containers/home/reactClass/exJump';
+import ExAxios from '~/containers/home/reactClass/exAxios';
+import ExVuex from '~/containers/home/reactClass/exVuex';
+import Beautiful from '~/containers/home/reactClass/beautiful';
 
 
-import Cosplay from '~/containers/home/hanshu/cosplay';
-import ExRedux from '~/containers/home/hanshu/exRedux';
+import hook1 from '~/containers/home/hooks/hook1';
+import ExRedux from '~/containers/home/hooks/exRedux';
 
 export const first_arr = [
-    { path: '/home/lifeCycle', name: '生命周期', component: LifeCycle },
-    { path: '/home/attrBind', name: '属性绑定', component: attrBind },
-    { path: '/home/father', name: '父子组件', component: Father },
-    { path: '/home/jump/:id', name: '跳转', component: Jump },
-    { path: '/home/exAxios', name: '自定义axios', component: ExAxios },
-    { path: '/home/exVuex', name: '状态管理', component: ExVuex },
-    { path: '/home/exCache', name: '缓存', component: ExCache },
-    { path: '/home/beautiful', name: 'admin页面', component: Beautiful }
+    { path: '/home/reactClass/lifeCycle', name: '生命周期', component: LifeCycle },
+    { path: '/home/reactClass/attrBind', name: '属性绑定', component: attrBind },
+    { path: '/home/reactClass/father', name: '父子组件', component: Father },
+    { path: '/home/reactClass/jump/:id', name: '跳转', component: Jump },
+    { path: '/home/reactClass/exAxios', name: '自定义axios', component: ExAxios },
+    { path: '/home/reactClass/exVuex', name: '状态管理', component: ExVuex },
+    { path: '/home/reactClass/beautiful', name: 'admin页面', component: Beautiful }
 ];
 
 export const second_arr = [
-    { path: '/home/cosplay', name: 'hook1', component: Cosplay },
-    { path: '/home/exRedux', name: 'hook2', component: ExRedux },
+    { path: '/home/hooks/hook1', name: 'hook1', component: hook1 },
+    { path: '/home/hooks/exRedux', name: '状态管理', component: ExRedux },
 ];
 
 

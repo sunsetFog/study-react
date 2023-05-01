@@ -33,8 +33,9 @@ class Fairyland extends Component {
           </div>
           <h1>React Project</h1>
         </div>
+        <br/><br/>
         <div style={{width: '1000px', margin: '0 auto'}}>
-            {/* 
+            {/*
                 study: 二级路由，方式2
                 路由视图
                 要是函数组件没有this {props.children}

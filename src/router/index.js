@@ -14,7 +14,7 @@ import Docs from '../containers/fairyland/docs/index';
 import App from '../containers/app';
 
 
-import Nice from '~/containers/home/index.js';
+import Nice from '~/containers/home//index.js';
 
 import NotFound from '~/containers/404';
 
@@ -44,40 +44,40 @@ Route注册路由
 */
 const Root = () => (
   <BrowserRouter>
-    {/* 
+    {/*
       这相当于vue的app.vue   方式1
 
         BrowserRouter里加   <App/>
-    
+
     */}
-    
-    {/* 
+
+    {/*
         为React提供Redux store
      */}
     <Provider store={Store}>
       <div className="router-content">
         {/* {__DEVELOPMENT__ && <DevTools />} */}
         <Switch>
-          {/* 
+          {/*
               这相当于vue的app.vue    方式2
            */}
           <Router path="/" component={App} >
 
-            {/* 
+            {/*
                 注意用的是Route，Router嵌套时用
                 exact是精确匹配
             */}
             {/* <Route exact path="/login" component={Login} /> */}
 
 
-            {/* 
+            {/*
                 study: 二级路由，方式1
             */}
             <Router path="/home" component={Nice}>
-              
+
             </Router>
 
-            {/* 
+            {/*
                 study: 二级路由，方式2
              */}
             <Router path="/fairyland" component={Fairyland} >
@@ -85,18 +85,18 @@ const Root = () => (
               <Redirect to="/fairyland/docs" />
             </Router>
 
-            {/* 
+            {/*
                 /去的页面
             */}
-            <Redirect from="/" exact to="/home/lifeCycle" />
+            <Redirect from="/" exact to="/home/reactClass/lifeCycle" />
 
-            {/* 
+            {/*
                 404找不到页面
              */}
             <Route path="*" component={NotFound} />
-          
 
-            
+
+
 
 
           </Router>

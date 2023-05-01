@@ -28,7 +28,7 @@ class menuDesign extends Component {
     state = {
     }
     UNSAFE_componentWillMount() {
-      
+
     }
     // 导航菜单方法
     getItem(label, key, icon, children, type) {
@@ -50,14 +50,14 @@ class menuDesign extends Component {
       // const history = useHistory();
       // history.push(value.key);
 
-      
+
       // this.context.router.history.push(value.key);
 
 
       /*
           this.props.history.push报错push undefined
           跳转url变了，页面没显示
-          解决：所有组件用withRouter          
+          解决：所有组件用withRouter
        */
       this.props.history.push(value.key);
       // this.props.history.replace('/docs');
@@ -82,9 +82,9 @@ class menuDesign extends Component {
       box2.push(this.getItem(item.name, item.path))
     }
     // console.log("--box1--", box1)
-      
+
       const items = [
-        this.getItem('知识点', 'sub1', <AppstoreOutlined />, box1),
+        this.getItem('类组件', 'sub1', <AppstoreOutlined />, box1),
         this.getItem('函数组件', 'sub2', <AppstoreOutlined />, box2)
       ];
 

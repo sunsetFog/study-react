@@ -44,23 +44,18 @@ npm start //运行项目
 | useEslint  | Boolean  | 是否使用eslint  |
 | autoOpenBrowser  | Boolean  | 是否自动打开浏览器  |
 | errorOverlay  | Boolean  | 是否使用全屏报错提示  |
-|  notifyOnErrors | Boolean  | 是否使用消息通知  |
+| notifyOnErrors | Boolean  | 是否使用消息通知  |
 | showEslintErrorsInOverlay  | Boolean  | 是否使用eslint全屏报错提示  |
 | bundleAnalyzerReport  | Boolean  | 是否使用打包编译完成后显示依赖分析  |
 
 
-样式依赖
-node-sass
-less less-loader
-stylus stylus-loader    Stylus跟Less完全一样
 
-路由守卫
-
-react+dva+antd+umi项目
+# 项目技术
+react、antd、dva、umi
 
 react框架作用：模块化、组件化、工程化
 
-视频学习：
+# 视频学习
 课题：React入门到实战
 关注：柴柴_前端教书匠
 
