@@ -9,6 +9,8 @@ import Beautiful from '~/containers/home/reactClass/beautiful';
 
 import hook1 from '~/containers/home/hooks/hook1';
 import ExRedux from '~/containers/home/hooks/exRedux';
+import Instruct from '~/containers/home/hooks/instruct';
+import exMobx from '~/containers/home/hooks/exMobx';
 
 export const first_arr = [
     { path: '/home/reactClass/lifeCycle', name: '生命周期', component: LifeCycle },
@@ -22,7 +24,9 @@ export const first_arr = [
 
 export const second_arr = [
     { path: '/home/hooks/hook1', name: 'hook1', component: hook1 },
-    { path: '/home/hooks/exRedux', name: '状态管理', component: ExRedux },
+    { path: '/home/hooks/exRedux', name: '状态管理@reduxjs/toolkit', component: ExRedux },
+    { path: '/home/hooks/instruct', name: '指令', component: Instruct },
+    { path: '/home/hooks/exMobx', name: '状态管理mobx', component: exMobx },
 ];
 
 
