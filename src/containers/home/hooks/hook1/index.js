@@ -11,7 +11,7 @@ import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter, useHis
 function Cosplay(props) {
     const [count, setCount] = useState(0);
     const h1Foo = useRef(null);
-    
+
     /*
         函数副作用
         什么是副作用：
@@ -47,15 +47,16 @@ function Cosplay(props) {
         console.log("--beanWay--");
         setCount(9);
     }
-    const history = useHistory()
+    // const history = useHistory();
+    const { history } = props;
     const jumpWay = () => {
-        history.push('/home/exRedux?title=6')
+        history.push('/home/hooks/instruct?title=6')
         // history.push({
         //     pathname: '/home/exRedux',
         //     state: { name: '白菜' },
         // })
     }
-    
+
     const [list, setList] = useState([]);
     console.log("--props--", props);
     console.log("--useState--", count, "---", list);
@@ -64,10 +65,10 @@ function Cosplay(props) {
     return (
         <div>
             ++++++++++++++++++++++++函数组件++++++++++++++++++++++++
-            <br/>
+            <br/><br/>
             <button onClick={beanWay} ref={h1Foo}>修改state</button>
-            ------
-            <button onClick={jumpWay}>跳转</button>
+            <br/><br/>
+            <button onClick={jumpWay}>useHistory跳转</button>
         </div>
     );
 }

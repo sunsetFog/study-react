@@ -10,11 +10,17 @@ import {
     Link,
     withRouter,
     useHistory,
+    useSearchParams
 } from "react-router-dom";
 
 function InstructUnit(props) {
     const [openBay, setOpenBay] = useState(false);
     const [listBay, setListBay] = useState([1, 5, 10]);
+
+    console.log("--props--", props)
+    // 报错：caught TypeError: (0 , _reactRouterDom.useSearchParams) is not a function
+    // const [searchParams, setSearchParams] = useSearchParams()
+    // console.log("--路由参数--", searchParams)
 
     const beanWay = () => {
         console.log("--beanWay--");

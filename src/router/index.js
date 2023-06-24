@@ -8,8 +8,8 @@ import {hot} from 'react-hot-loader';
 
 import Store from '../store';
 
-import Fairyland from '../containers/fairyland/index';
-import Docs from '../containers/fairyland/docs/index';
+import Fairyland from '~/containers/fairyland/index';
+import Docs from '~/containers/fairyland/docs/index';
 
 import App from '../containers/app';
 
@@ -17,6 +17,10 @@ import App from '../containers/app';
 import Nice from '~/containers/home//index.js';
 
 import NotFound from '~/containers/404';
+
+
+// import { browserHistory, Router as Router6 } from 'react-router'
+// import { bingo } from '~/router/routes';
 
 
 const Router = ({component: Component, children, ...rest}) => (
@@ -56,6 +60,7 @@ const Root = () => (
      */}
     <Provider store={Store}>
       <div className="router-content">
+        {/* 用redux文件夹时解开 */}
         {/* {__DEVELOPMENT__ && <DevTools />} */}
         <Switch>
           {/*
@@ -84,6 +89,8 @@ const Root = () => (
               <Router exact path="/fairyland/docs" component={Docs} />
               <Redirect to="/fairyland/docs" />
             </Router>
+
+            {/* <Router6 history={browserHistory} routes={bingo} ></Router6> */}
 
             {/*
                 /去的页面

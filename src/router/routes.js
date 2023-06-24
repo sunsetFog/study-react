@@ -35,3 +35,15 @@ export const routes = [
     ...first_arr,
     ...second_arr
 ];
+
+
+
+// 路由表
+import Fairyland from '~/containers/fairyland/index';
+import Docs from '~/containers/fairyland/docs/index';
+export const bingo = [
+    { path: '/fairyland', component: Fairyland, children: [
+        { path: '/fairyland/docs', component: Docs },
+        { path: '/', redirect: '/fairyland/docs' }
+    ] }
+]
