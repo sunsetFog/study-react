@@ -12,6 +12,8 @@ import ExRedux from '~/containers/home/hooks/exRedux';
 import Instruct from '~/containers/home/hooks/instruct';
 import exMobx from '~/containers/home/hooks/exMobx';
 
+
+
 export const first_arr = [
     { path: '/home/reactClass/lifeCycle', name: '生命周期', component: LifeCycle },
     { path: '/home/reactClass/attrBind', name: '属性绑定', component: attrBind },
@@ -29,11 +31,16 @@ export const second_arr = [
     { path: '/home/hooks/exMobx', name: '状态管理mobx', component: exMobx },
 ];
 
+export const third_arr = [
+    // { path: '/home/businessModule/dragonBoatFestival', name: 'dragonBoatFestival', component: dragonBoatFestival },
+]
+
 
 // study: 二级路由，方式1
 export const routes = [
     ...first_arr,
-    ...second_arr
+    ...second_arr,
+    ...third_arr
 ];
 
 

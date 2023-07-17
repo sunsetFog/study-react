@@ -19,7 +19,7 @@ axios.interceptors.request.use(function (config) {// 不报错函数
 
 
 axios.interceptors.response.use(function (res) {// 不报错函数
-    return res
+    return res.data
 }, function (err) {// 报错函数
     const { data: { err: errnum, error } } = (err || {}).response;
     if (errnum === 200 && error) {

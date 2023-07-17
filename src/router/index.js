@@ -16,6 +16,8 @@ import App from '../containers/app';
 
 import Nice from '~/containers/home//index.js';
 
+import dragonBoatFestival from '~/containers/home/businessModule/dragonBoatFestival';
+
 import NotFound from '~/containers/404';
 
 
@@ -79,8 +81,12 @@ const Root = () => (
                 study: 二级路由，方式1
             */}
             <Router path="/home" component={Nice}>
-
+              
             </Router>
+            <Route path="/businessModule/dragonBoatFestival" component={dragonBoatFestival}>
+
+            </Route>
+              
 
             {/*
                 study: 二级路由，方式2

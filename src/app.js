@@ -11,7 +11,7 @@ import './style/scss.scss';
 
 
 // study: http请求
-import http from './api/http';
+import http from '~/api/http';
 window.customAxios = http;
 
 // 跨组件通信Context    例如：父直接传孙子

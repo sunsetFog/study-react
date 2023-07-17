@@ -1,3 +1,10 @@
 node_modules
 dist
 .idea
+
+.yarn
+package-lock.json
+
+.yarnrc.yml
+
+yarn.lock

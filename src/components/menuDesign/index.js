@@ -15,7 +15,7 @@ import { browserHistory } from 'react-router'
 
 import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
 
-import { first_arr, second_arr } from '~/router/routes'
+import { first_arr, second_arr, third_arr } from '~/router/routes'
 
 
 // connect的作用是将组件和models结合在一起。将models中的state绑定到组件的props中。并提供一些额外的功能，譬如dispatch
@@ -81,11 +81,18 @@ class menuDesign extends Component {
       const item = second_arr[i];
       box2.push(this.getItem(item.name, item.path))
     }
+
+    let box3 = []
+    for (let i = 0; i < third_arr.length; i++) {
+      const item = third_arr[i];
+      box3.push(this.getItem(item.name, item.path))
+    }
     // console.log("--box1--", box1)
 
       const items = [
         this.getItem('类组件', 'sub1', <AppstoreOutlined />, box1),
-        this.getItem('函数组件', 'sub2', <AppstoreOutlined />, box2)
+        this.getItem('函数组件', 'sub2', <AppstoreOutlined />, box2),
+        this.getItem('业务模块', 'sub3', <AppstoreOutlined />, box3)
       ];
 
       return (
