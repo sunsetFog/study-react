@@ -64,14 +64,18 @@ class LifeOfCycle extends Component {
     }
     /*
         将要更新回调
+        参数1: 新的props
+        参数2: 新的state
      */
-    UNSAFE_componentWillUpdate() {
-        console.log("--UNSAFE_componentWillUpdate--每次更新state顺序1");
+    UNSAFE_componentWillUpdate(nextProps, nextState) {
+        console.log("--UNSAFE_componentWillUpdate--每次更新state顺序1", nextProps, nextState);
     }
     /*
         已经更新回调
+        参数1: 旧的props
+        参数2: 旧的state
      */
-    componentDidUpdate() {
+    componentDidUpdate(prevProps, prevState) {
         console.log("--componentDidUpdate--每次更新state顺序3");
     }
     /*
@@ -84,10 +88,11 @@ class LifeOfCycle extends Component {
         return true;
     }
     /*
-        props改变才触发，父子组件传参用
+        父组件改变后的props, 重新渲染时用
+        参数1: 新的props，可以与this.props作判断
      */
-    UNSAFE_componentWillReceiveProps() {
-        console.log("--UNSAFE_componentWillReceiveProps--props改变才触发，父子组件传参用");
+    UNSAFE_componentWillReceiveProps(nextProps) {
+        console.log("--UNSAFE_componentWillReceiveProps--props改变才触发，父子组件传参用", nextProps);
     }
 
 
@@ -126,7 +131,7 @@ class LifeOfCycle extends Component {
       return (
         <div>
             ++++生命周期++++
-            {/* 
+            {/*
                 空标签<></>  相当于vue的template标签
                 现在是<React.Fragment> 若上面import React, { Component, Fragment } from 'react';  就用 <Fragment>
             */}

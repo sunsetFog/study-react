@@ -5,6 +5,7 @@ import logo from '~/assets/logo.png';
 import * as homeActions from '../redux/reduces/home';
 
 import { HashRouter as Router, Route, Switch, Redirect, Link, withRouter } from 'react-router-dom';
+import HookListen from '~/containers/home/hooks/hookListen';
 
 @connect(
   state => ({home: state.home}),
@@ -21,8 +22,8 @@ class App extends Component {
 
     return (
       <div className="app-vue" style={{height: '100%'}}>
-
-        {/* 
+        <HookListen></HookListen>
+        {/*
             路由视图
          */}
         {this.props.children}

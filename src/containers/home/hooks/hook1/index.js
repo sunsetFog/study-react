@@ -26,7 +26,7 @@ function Cosplay(props) {
             第二个参数（依赖项）: [count]   首次渲染和count修改执行
             注意事项
             useEffect有用到状态（依赖数据），依赖项数组中添加状态，否则bug出现
-        清理副作用执行：
+        return 函数  清理副作用执行：
             1. 组件卸载时自动执行
             2. 组件更新时，下一个useEffect副作用函数执行*之前*自动执行
     */
