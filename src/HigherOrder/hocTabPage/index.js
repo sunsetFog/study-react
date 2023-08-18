@@ -5,7 +5,7 @@ import React from 'react'
     反向继承
 */
 
-const WithTabPage = ({ tabList }) => (Component) => {// 第二个函数的return值 等于 第一个函数的return值
+const WithTabPage = ({ tabList }) => (Component) => {
 
     // 类
     class WrapperComponent extends Component {
@@ -17,6 +17,10 @@ const WithTabPage = ({ tabList }) => (Component) => {// 第二个函数的return
         componentDidMount() {
             console.log("--高阶组件--", tabList)
         }
+        dickey = () => {// compose后，在this.props能找到这方法
+            console.log("--小鸟--");
+        }
+
 
 
         render() {
@@ -31,7 +35,7 @@ const WithTabPage = ({ tabList }) => (Component) => {// 第二个函数的return
 
 
 
-    return WrapperComponent
+    return WrapperComponent;// 函数组件的return一个类
 }
 
 export default WithTabPage
